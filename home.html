@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hyperloop One - Home</title>
+	<link rel="icon" type="image/png" href="Loop.png">
+    <link rel="stylesheet" type="text/css" href="CSS\home.css">
+</head>
+<body>
+<video poster="Hyperloop.png" id="bgvid" playsinline autoplay muted loop>
+<source src="ScienceoftheHyperloop.mp4" type="video/mp4">
+<source src="ScienceoftheHyperloop.mp4" type="video/mp4">
+</video>
+<div id="aniket">
+<center><img src="hyperloop.png" style="width: 400px; height: 129px;"></center>
+<center><p><font face="Raleway">animation by TechInsider</font></p></center>
+<button>Pause</button>
+<p><font face="Raleway">As the world is growing at a magnanimous rate, so is the globalisation and the urge of people to travel longer distance in short time. We accept that time is the most important part of living being's life. Seeing the new urge inside people we present you our new brainchild or call it inovation of future - The Hyperoloop. The Hyperloop programs consists various forms camps, programs and partnering offers.</font></p>
+<center><p><a href="about.html"><font face="Raleway">Click me to know more !</a></p></center>
+
+</div>
+<script type="text/javascript">
+	var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#aniket button");
+
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+}
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+})
+</script>
+</body>
+</html>
